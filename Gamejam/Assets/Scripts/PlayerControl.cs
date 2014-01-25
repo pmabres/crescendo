@@ -98,6 +98,7 @@ public class PlayerControl : MonoBehaviour
 			anim.SetInteger("state",2);
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
+			gameObject.GetComponent<CharacterProgression>().jumpsMade ++;
 		}
 	}
 	
