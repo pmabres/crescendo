@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 69eaaaa8ad928e14184d293e9680c149
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: character1-hit_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 11
+        width: 54
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: character1-hit_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 16
+        width: 68
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: character1-hit_2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 12
+        width: 60
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: character1-hit_3
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 7
+        width: 67
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: character1-hit_4
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 9
+        width: 65
+        height: 108
+      alignment: 9
+      pivot: {x: .413360119, y: .448425084}
+    - name: character1-hit_5
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 10
+        width: 138
+        height: 93
+      alignment: 9
+      pivot: {x: .241166934, y: .512999058}
+    - name: character1-hit_6
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 8
+        width: 84
+        height: 109
+      alignment: 9
+      pivot: {x: .404896319, y: .430780917}
+    - name: character1-hit_7
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 7
+        width: 47
+        height: 83
+      alignment: 9
+      pivot: {x: .5, y: .596249282}
+    - name: character1-hit_8
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 11
+        width: 60
+        height: 104
+      alignment: 9
+      pivot: {x: .485206097, y: .427453041}
+  spritePackingTag: 
+  userData: 
