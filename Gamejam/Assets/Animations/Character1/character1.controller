@@ -44,6 +44,24 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110100419
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110299388}
+  m_DstState: {fileID: 110269956}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: state
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110109961
 Transition:
   m_ObjectHideFlags: 3
@@ -130,6 +148,24 @@ Transition:
   - m_ConditionMode: 6
     m_ConditionEvent: state
     m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110154139
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110269956}
+  m_DstState: {fileID: 110299388}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: state
+    m_EventTreshold: 5
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -224,6 +260,24 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110189653
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110260062}
+  m_DstState: {fileID: 110299388}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: state
+    m_EventTreshold: 5
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1102 &110200000
 State:
   m_ObjectHideFlags: 3
@@ -235,7 +289,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: f727f7fa8c945b04d9f92d2f47fe251c, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 444, y: 168, z: 0}
+  m_Position: {x: 576, y: 60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -250,7 +304,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: a74863adc1b54d5448f6bb330b21ae08, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 660, y: 60, z: 0}
+  m_Position: {x: 444, y: 192, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -265,7 +319,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 36b373bb21dfca845bbd639024d143d2, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 840, y: 144, z: 0}
+  m_Position: {x: 780, y: 132, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -280,7 +334,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 56469e12a01ed384b82a0c4ec789b52e, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 828, y: -24, z: 0}
+  m_Position: {x: 780, y: -12, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -299,6 +353,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110299388
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: swimHands
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 38a66ecebddb0064db270d152dbb00cd, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 696, y: -180, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1107 &110700000
 StateMachine:
   serializedVersion: 2
@@ -313,14 +382,20 @@ StateMachine:
   - {fileID: 110269956}
   - {fileID: 110256636}
   - {fileID: 110260062}
+  - {fileID: 110299388}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
+    data:
+      first: {fileID: 110299388}
+      second:
+      - {fileID: 110100419}
     data:
       first: {fileID: 110269956}
       second:
       - {fileID: 110164582}
       - {fileID: 110185693}
+      - {fileID: 110154139}
     data:
       first: {fileID: 110200000}
       second:
@@ -341,6 +416,10 @@ StateMachine:
       second:
       - {fileID: 110147860}
       - {fileID: 110121756}
+      - {fileID: 110189653}
+    data:
+      first: {fileID: 0}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 252, y: 0, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

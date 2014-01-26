@@ -12,7 +12,10 @@ TagManager:
   - BombPickup
   - ExplosionFX
   - HealthBar
-  - 
+  - sky
+  - walk
+  - light
+  - fly
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

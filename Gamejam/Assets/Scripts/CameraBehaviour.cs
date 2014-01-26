@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraBehaviour : MonoBehaviour {
-
+	public GameObject MainCharacter;
 	private bool isZooming;
 	private float zoomValue;
 	private int zoomSign;
@@ -14,6 +14,9 @@ public class CameraBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
+		//folllow
+		gameObject.transform.position = new Vector3(MainCharacter.transform.position.x,MainCharacter.transform.position.y,gameObject.transform.position.z);
 		if (isZooming)
 		{
 			if (camera.orthographicSize >= zoomValue + 2 * zoomSign)

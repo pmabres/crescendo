@@ -96,7 +96,7 @@ TextureImporter:
         x: 393
         y: 129
         width: 71
-        height: 91
+        height: 84
       alignment: 0
       pivot: {x: .5, y: .5}
     - name: character1-flap_6

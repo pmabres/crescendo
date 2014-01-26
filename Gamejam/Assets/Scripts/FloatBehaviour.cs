@@ -26,7 +26,11 @@ public class FloatBehaviour : MonoBehaviour {
 			distance +=  Mathf.Abs(inputX) * speed.x;
 			if (distance >= 30)
 			{
-				gameObject.GetComponent<CharacterProgression>().stepsMade++;
+				if (Statics.charProgression != null)
+				{
+					Statics.charProgression.stepsMade++;
+				}
+
 				distance = 0;
 			}
 		}

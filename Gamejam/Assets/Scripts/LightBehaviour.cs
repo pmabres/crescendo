@@ -9,6 +9,7 @@ public class LightBehaviour : MonoBehaviour {
 	private int intensitySign;
 	private int zPositionSign;
 	private float timeChange;
+	public GameObject MainCharacter;
 	public bool isGlowing;
 	public float lightIntensityE;
 	public float lightOriginalIntensity;
@@ -23,11 +24,13 @@ public class LightBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		//follow always
+		gameObject.transform.position = new Vector3(MainCharacter.transform.position.x,MainCharacter.transform.position.y,gameObject.transform.position.z);
 		if (isChanging)
 		{
 
 			gameObject.light.intensity = Mathf.Lerp(gameObject.light.intensity,intensity,Time.deltaTime * timeChange);
-			gameObject.transform.localPosition = new Vector3 (transform.localPosition.x,transform.localPosition.y, Mathf.Lerp(gameObject.transform.localPosition.z,zPosition,Time.deltaTime * timeChange));
+			gameObject.transform.localPosition = new Vector3 (transform.localPosition.x,transform.localPosition.y, Mathf.Lerp(gameObject.transform.localPosition.z,zPosition,Time.deltaTime * timeChange * 0.2f));
 		}
 		if (isGlowing && !isChanging) LightGlow();
 	}
