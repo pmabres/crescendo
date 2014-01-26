@@ -18,5 +18,16 @@ public class CharacterProgression : MonoBehaviour {
 		{
 			gameObject.GetComponent<CharacterManager>().canFly = true;
 		}
+		if (stepsMade >= 1 && gameObject.GetComponent<CharacterManager>().isLight)
+		{
+			gameObject.GetComponent<CharacterManager>().isEnergy = true;
+			gameObject.GetComponent<CharacterManager>().isLight = false;
+		}
+		if (stepsMade >= 10 && gameObject.GetComponent<CharacterManager>().isEnergy)
+		{
+			gameObject.GetComponent<CharacterManager>().isEnergy = false;
+			gameObject.GetComponent<CharacterManager>().isMatter = true;
+
+		}
 	}
 }

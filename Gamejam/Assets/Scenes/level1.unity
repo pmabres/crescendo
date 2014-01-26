@@ -86,6 +86,7 @@ GameObject:
   - 92: {fileID: 7109542}
   - 124: {fileID: 7109541}
   - 81: {fileID: 7109540}
+  - 114: {fileID: 7109545}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -154,6 +155,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1768999180}
+--- !u!114 &7109545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 7109539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e92dabfb7033242a2d4136bc8b5e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &83389535
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +402,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 971670788}
   - 108: {fileID: 971670789}
+  - 114: {fileID: 971670790}
   m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
@@ -404,7 +417,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 971670787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.100000001}
+  m_LocalPosition: {x: 0, y: 0, z: -.00999999978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1768999180}
@@ -419,7 +432,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
-  m_Range: 70
+  m_Range: 300
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -443,6 +456,23 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &971670790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971670787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3d59442ae23fe45bd25da297bad1e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlowing: 0
+  lightIntensityE: 0
+  lightOriginalIntensity: 0
+  lightProposedIntensity: 0
+  lightIntensityS: 0
+  lightGlowInterval: 0
 --- !u!1 &1306673948
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +943,7 @@ GameObject:
   - 114: {fileID: 1768999184}
   - 114: {fileID: 1768999183}
   - 114: {fileID: 1768999185}
+  - 114: {fileID: 1768999186}
   m_Layer: 9
   m_Name: Personaje
   m_TagString: Untagged
@@ -964,6 +995,8 @@ MonoBehaviour:
   jumpClips: []
   jumpForce: 2000
   cameraFollow: {fileID: 7109539}
+  isMoving: 0
+  distance: 0
 --- !u!212 &1768999179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1035,6 +1068,8 @@ MonoBehaviour:
   canFly: 0
   canHit: 0
   canClimb: 0
+  canFloat: 0
+  test: 0
   seeRange: 0
   walkSpeed: 0
   lightGlowSpeed: 5
@@ -1044,7 +1079,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768999175}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7263d157674ca4f4d8a17abb9f4ddb4d, type: 3}
   m_Name: 
@@ -1055,7 +1090,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768999175}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4bf9a7e7266c1042892c9daf30b83e2, type: 3}
   m_Name: 
@@ -1075,6 +1110,18 @@ MonoBehaviour:
   stepsMade: 0
   jumpsMade: 0
   waterBreeded: 0
+--- !u!114 &1768999186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768999175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07787049ab3c1b94cb02689ce56a307b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
 --- !u!1 &1841745606
 GameObject:
   m_ObjectHideFlags: 0

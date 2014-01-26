@@ -16,8 +16,8 @@ public class PlayerControl : MonoBehaviour
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
-
-	
+	public bool isMoving;
+	public float distance;
 	void Awake()
 	{
 		// Setting up references.
@@ -25,7 +25,10 @@ public class PlayerControl : MonoBehaviour
 		anim = GetComponent<Animator>();
 
 	}
+	void Start()
+	{
 	
+	}
 	
 	void Update()
 	{
@@ -36,8 +39,8 @@ public class PlayerControl : MonoBehaviour
 		{
 			jump = true;
 		}
+		gameObject.rigidbody2D.gravityScale = 3;
 	}	
-	
 	
 	void FixedUpdate ()
 	{
@@ -46,6 +49,15 @@ public class PlayerControl : MonoBehaviour
 		
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		//anim.SetFloat("Speed", Mathf.Abs(h));
+		if (h != 0)
+		{
+			distance +=   Mathf.Abs(h) * moveForce;
+			if (distance >= 100)
+			{
+				gameObject.GetComponent<CharacterProgression>().stepsMade++;
+				distance = 0;
+			}
+		}
 
 		if (h == 0 && !jump && anim.GetInteger("state") != 0)
 		{
@@ -67,7 +79,6 @@ public class PlayerControl : MonoBehaviour
 		if(h * rigidbody2D.velocity.x < maxSpeed)
 			// ... add a force to the player.
 		{
-
 			rigidbody2D.AddForce(Vector2.right * h * moveForce);
 		}
 		// If the player's horizontal velocity is greater than the maxSpeed...
