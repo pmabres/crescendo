@@ -48,29 +48,29 @@ TextureImporter:
     - name: secuencia larva_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 11
-        width: 78
-        height: 54
+        x: 4
+        y: 10
+        width: 101
+        height: 58
       alignment: 9
-      pivot: {x: .543970942, y: .470360368}
+      pivot: {x: .563912213, y: .522258937}
     - name: secuencia larva_1
       rect:
         serializedVersion: 2
-        x: 103
-        y: 12
-        width: 85
-        height: 56
-      alignment: 9
-      pivot: {x: .528171122, y: .445489407}
+        x: 109
+        y: 11
+        width: 83
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
     - name: secuencia larva_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 15
-        width: 100
-        height: 53
-      alignment: 9
-      pivot: {x: .430743247, y: .468025506}
+        x: 199
+        y: 11
+        width: 85
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 
