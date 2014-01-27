@@ -3283,32 +3283,6 @@ SpriteRenderer:
   m_SortingLayerID: 1024582385
   m_Sprite: {fileID: 21300000, guid: 25ba9f150fd4cbd45ae75e82321797bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &649718209
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 649718210}
-  m_Layer: 0
-  m_Name: Menu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &649718210
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 649718209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2507515, y: 5.74971581, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &663512031
 GameObject:
   m_ObjectHideFlags: 0
@@ -5781,21 +5755,13 @@ GameObject:
   - 20: {fileID: 1556593466}
   - 124: {fileID: 1556593465}
   - 92: {fileID: 1556593464}
-  - 81: {fileID: 1556593463}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: menuCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1556593463
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1556593462}
-  m_Enabled: 1
 --- !u!92 &1556593464
 Behaviour:
   m_ObjectHideFlags: 0

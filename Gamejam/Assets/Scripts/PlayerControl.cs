@@ -81,7 +81,6 @@ public class PlayerControl : MonoBehaviour
 			if (!grounded && rigidbody2D.velocity.y < 0 )
 			{
 				anim.SetInteger("state",4);
-				Debug.Log("entra");
 			}
 		}
 		else
@@ -98,8 +97,6 @@ public class PlayerControl : MonoBehaviour
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 
-		Debug.Log("L: " + wallHitL);
-		Debug.Log("R: " + wallHitR);
 		if (!swim)
 		{
 			if(h * rigidbody2D.velocity.x < maxSpeed)
