@@ -55,46 +55,48 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
-		
+		float v = Input.GetAxis("Vertical");
+
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		//anim.SetFloat("Speed", Mathf.Abs(h));
 		if (h != 0)
 		{
 			distance +=   Mathf.Abs(h) * moveForce;
-			if (distance >= 100)
+			if (distance >= 175)
 			{
 				Statics.charProgression.stepsMade++;
 				distance = 0;
 			}
 		}
-
-		if (h == 0 && grounded && anim.GetInteger("state") != 0)
+		if(!Statics.charManager.canSwim)
 		{
-			anim.SetInteger("state",0);
-		}
-		if (h != 0 && !jump)
-		{
-			anim.SetInteger("state",1);
-		}
-		if (GetComponent<FlyBehaviour>() != null)
-		{
-			if (!grounded && rigidbody2D.velocity.y < 0 )
+			if (h == 0 && grounded && anim.GetInteger("state") != 0)
 			{
-				anim.SetInteger("state",4);
+				anim.SetInteger("state",0);
+			}
+			if (h != 0 && !jump)
+			{
+				anim.SetInteger("state",1);
+			}
+			if (GetComponent<FlyBehaviour>() != null)
+			{
+				if (!grounded && rigidbody2D.velocity.y < 0 )
+				{
+					anim.SetInteger("state",4);
+				}
+			}
+			else
+			{
+				if (!jump && !grounded && rigidbody2D.velocity.y > 0)
+				{
+					anim.SetInteger("state",3);
+				}
+				else if (!jump && !grounded && rigidbody2D.velocity.y < 0)
+				{
+					anim.SetInteger("state",4);
+				}
 			}
 		}
-		else
-		{
-			if (!jump && !grounded && rigidbody2D.velocity.y > 0)
-			{
-				anim.SetInteger("state",3);
-			}
-			else if (!jump && !grounded && rigidbody2D.velocity.y < 0)
-			{
-				anim.SetInteger("state",4);
-			}
-		}
-
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 
 		if (!swim)

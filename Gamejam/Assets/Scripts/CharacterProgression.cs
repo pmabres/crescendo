@@ -16,16 +16,17 @@ public class CharacterProgression : MonoBehaviour {
 	void Update () 
 	{
 
-		if (stepsMade >= 1 && Statics.charManager.isLight)
+		if (stepsMade >= 10 && Statics.charManager.isLight)
 		{
 			Statics.charManager.isEnergy = true;
 			Statics.charManager.isLight = false;
 			if (Statics.charManager.isEnergy)
 			{
 				ChangeSound(0,0.25f,0.5f);
+				Evol();
 			}
 		}
-		if (stepsMade >= 10 && Statics.charManager.isEnergy)
+		if (stepsMade >= 20 && Statics.charManager.isEnergy)
 		{
 			Statics.charManager.isEnergy = false;
 			Statics.charManager.isMatter = true;
@@ -35,35 +36,44 @@ public class CharacterProgression : MonoBehaviour {
 
 				ChangeSound(0,-1f,15f);
 				ChangeSound(1,0.25f,0.5f);
-				PlaySound(6,true);
+				Evol();
 			}
 		}
 
-		if (stepsMade >= 50 && Statics.charManager.isMatter)
+		if (stepsMade >= 100 && Statics.charManager.isMatter && !Statics.charManager.canSee)
 		{
 			Statics.charManager.canSee = true;
+			Evol();
 		}
 
-		if (stepsMade >= 90 && Statics.charManager.isMatter)
+		if (stepsMade >= 200 && Statics.charManager.isMatter && !Statics.charManager.legs)
 		{
 			Statics.charManager.legs = true;
+			Evol();
 		}
 
-		if (stepsMade >= 160 && !Statics.charManager.canSwim && !Statics.charManager.canFly && Statics.charManager.legs)
+		if (stepsMade >= 400 && !Statics.charManager.canSwim && !Statics.charManager.canFly && !Statics.charManager.tail && Statics.charManager.legs)
 		{
 			Statics.charManager.tail = true;
 			Statics.charManager.canHit = true;
+			Evol();
 		}
 
-		if (jumpsMade > 10 && !Statics.charManager.canSwim && !Statics.charManager.tail && Statics.charManager.legs)
+		if (jumpsMade > 15 && !Statics.charManager.canSwim && !Statics.charManager.tail && !Statics.charManager.canFly && Statics.charManager.legs)
 		{
 			Statics.charManager.canFly = true;
+			Evol();
 		}
 
-		if (waterBreeded >= 250 && !Statics.charManager.canFly && !Statics.charManager.tail && Statics.charManager.legs)
+		if (waterBreeded >= 250 && !Statics.charManager.canFly && !Statics.charManager.tail && !Statics.charManager.canSwim && Statics.charManager.legs)
 		{
 			Statics.charManager.canSwim = true;
+			Evol();
 		}
+	}
+	public void Evol()
+	{
+		PlaySound(6,true);
 	}
 	public void ChangeSound(int SourceIndex, float Volume, float TimeMultiplier)
 	{
